@@ -1,0 +1,1 @@
+# ether-password-manager

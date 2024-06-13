@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@font-face {
+  font-family: SFPro;
+  src: url(../public/font/sfpro.OTF) format("woff");
+}
+
+.capsule {
+  @apply border rounded-[14px] border-solid border-[#303C4E];
+  background: linear-gradient(180deg, #17191f 0%, #21232b 100%);
+}
+.nav {
+  border-bottom: 1px solid rgba(48, 60, 78, 0.5) !important;
+  background: #121419 !important;
+}
+.searchbar {
+  border-radius: 12px;
+  border: 1px solid #303c4e;
+  background: linear-gradient(180deg, #17191f 0%, #21232b 100%), #303c4e;
+}
+.connectbtn {
+  border-radius: 14px;
+  border: 1px solid #303c4e;
+  background: linear-gradient(0deg, #6f58c9 0%, #6f58c9 100%),
+    linear-gradient(180deg, #17191f 0%, #21232b 100%);
+}
+.genPassCard {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(
+      180deg,
+      rgba(64, 51, 117, 0.2) 0%,
+      rgba(18, 20, 25, 0.2) 100%
+    ),
+    #121419;
+}
+.modal {
+  border-radius: 16px;
+  border: 1px solid #8783D1;
+  background: linear-gradient(
+      180deg,
+      rgba(64, 51, 117, 0.2) 0%,
+      rgba(147, 176, 245, 0.2) 32.16%
+    ),
+    #121419;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.modal-dialog {
+  background: linear-gradient(#121419 0 0) padding-box, linear-gradient(to bottom, #8783D1, #121419) border-box;
+  padding-top: 10px;
+}

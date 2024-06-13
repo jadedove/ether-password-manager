@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DIRECT_URL")
+}
+
+enum IPFSType {
+  NOTE
+  PASSWORD
+}
+
+model prof_capable_iv_bot {
+  id      BigInt   @id @default(autoincrement())
+  invites BigInt[]
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  address   String   @unique
+  ipfs      IPFS[]
+  createdAt DateTime @default(now())
+}
+
+model IPFS {
+  id          Int      @id @default(autoincrement())
+  user        User     @relation(fields: [userAddress], references: [address])
+  userAddress String
+  cid         String
+  createdAt   DateTime @default(now())
+  type        IPFSType
+}
